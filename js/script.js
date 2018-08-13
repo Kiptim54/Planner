@@ -18,6 +18,10 @@ function Book(title,author,page, read){
             if(myLibrary[i]===url){
                 myLibrary.splice(i,1)
                 displayBooks()
+                if (myLibrary.length==0){
+                    let empty= document.querySelector('.empty')
+                    empty.innerHTML="<h6 class='center teal-text'>You have no task today...Enjoy your day</h6>"
+                }
             }
         }
         
