@@ -1,4 +1,4 @@
-var myLibrary=["Puple","The Fisherman","This is it", "its been a long time coming"]
+var myLibrary=["Task1","Task2","Task3"]
 
 function Book(title,author,page, read){
     this.title=title
@@ -30,8 +30,8 @@ function Book(title,author,page, read){
         books.innerHTML = ""
         for(i=0; i<myLibrary.length; i++){ 
             
-            li.innerHTML+=`<div class="bookItem">
-                 <li>${myLibrary[i]}<button class="delete" data-name="${myLibrary[i]}"  onClick='bookDelete("${myLibrary[i]}")'   type="submit">Delete </button></li> </div>`;
+            li.innerHTML+=`<div class="bookItem card-panel">
+                 <li>${myLibrary[i]}<button class="btn delete" data-name="${myLibrary[i]}"  onClick='bookDelete("${myLibrary[i]}")'   type="submit"><i class="material-icons" >delete</i></button></li> </div>`;
             books.appendChild(li)
             
 
@@ -49,13 +49,15 @@ function Book(title,author,page, read){
     //add book to library
     function addBook(e){
         let li= document.createElement('li')
+        let error=document.querySelector('.error')
         e.preventDefault()
         li.innerHTML=""
         var bookToAdd=document.querySelector('form');
             let addedBook=document.querySelector('input[type="text"]').value
             if(addedBook==""){
-                alert("key in book you fool")
+                error.style.display="block"
             }else{
+                error.style.display="none"
                 document.querySelector('input[type="text"]').value=""
                 myLibrary.push(addedBook)
                 console.log(myLibrary)

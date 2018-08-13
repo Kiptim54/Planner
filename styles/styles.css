@@ -1,20 +1,19 @@
-.bookItem{
+/* .bookItem{
     background: lightblue;
     border-radius: 2%;
    
 }
+*/
 .bookItem button{
-    background: red;
     color:white;
     margin-left:86%;
 
 }
 .bookItem li{
     margin:3%;
-    padding:3%;
+    
     font-weight: bold;
-    color: white;
 }
 .listBooks{
     list-style: none;
-}
+} 
