@@ -20,6 +20,7 @@ function Book(title,author,page, read){
                 displayBooks()
                 if (myLibrary.length==0){
                     let empty= document.querySelector('.empty')
+                    empty.style.display="block"
                     empty.innerHTML="<h6 class='center teal-text'>You have no task today...Enjoy your day</h6>"
                 }
             }
@@ -54,6 +55,7 @@ function Book(title,author,page, read){
     function addBook(e){
         let li= document.createElement('li')
         let error=document.querySelector('.error')
+        let empty= document.querySelector('.empty').style.display="none"
         e.preventDefault()
         li.innerHTML=""
         var bookToAdd=document.querySelector('form');
